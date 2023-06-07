@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Quote Bot</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header class="flex items-center flex-col gap-6 text-blue-700 p-4 bg-yellow-400 h-[20vh]">
+      <h1 class="text-4xl font-bold">Qoute from a Bot</h1>
+      <h5 class="font-semibold text-center w-[240px] ">Select a character and see what they have to say to you!</h5>
+    </header>
+    <main class="bg-blue-600 h-[80vh]">
+      <div class="characters flex-wrap flex gap-2 p-4 justify-center">
+        <div data-character="homer simpson" class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden">
+          <img class="w-full " src="/images/simpson.png" alt="img">
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Ash Ketchum">
+          <img class="w-full" src="./images/ash-ketchum.png" />
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Batman">
+          <img class="w-full" src="./images/batman.png" />
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Homer Simpson">
+          <img class="w-full" src="./images/homer-simpson.png" />
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Hermione Granger">
+          <img class="w-full" src="./images/hermione-granger.png" />
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Gandalf">
+          <img class="w-full" src="./images/gandalf.png" />
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Harley Quinn">
+          <img class="w-full" src="./images/harley-quinn.png" />
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Shrek">
+          <img class="w-full" src="./images/shrek.png" />
+        </div>
+        <div class="character cursor-pointer relative w-[100px] rounded-[50%] border-[3px] border-blue-900 border-solid bg-white overflow-hidden" data-character="Minion">
+          <img class="w-full" src="./images/minion.png" />
+        </div>
+      </div>
+      <div id='modal-box' class="modal-box hidden w-[450px] border-4 absolute m-0 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] p-5 border-solid border-blue-900 bg-white">
+        <div id="icon" class="icon w-[30px] rounded-full h-[30px] items-center flex justify-center bg-slate-200 absolute right-3 border-2 border-blue-900 border-solid top-3 cursor-pointer">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        <h2 id="modal-box-title" class="font-semibold text-xl"></h2>
+        <p id="modal-box-content"></p>
+      </div>
+    </main> 
+    <div class="loading hidden items-center justify-center fixed left-0 top-0 w-full bg-[#ffffff4f] z-40 h-full">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
